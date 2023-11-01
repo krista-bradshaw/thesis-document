@@ -6,6 +6,11 @@
 \usepackage[export]{adjustbox}
 \usepackage{todonotes}
 \usepackage{url}
+\usepackage{tabularx}
+\usepackage{etoolbox}
+
+\AtBeginEnvironment{tabularx}{\fontsize{10pt}{10pt}\selectfont}
+\AtBeginEnvironment{tabular}{\fontsize{10pt}{10pt}\selectfont}
 
 % Number subsections but not subsubsections:
 \setcounter{secnumdepth}{2}
@@ -18,7 +23,7 @@
 \setlength{\textwidth}		{150mm} % 35 + 150 + 25 = 210mm
 \setlength{\textheight}		{240mm} % 
 
-\renewcommand{\baselinestretch}{1.5}	% Looks like 1.5 spacing.
+\renewcommand{\baselinestretch}{1.5}
 
 % Stop figure/tables smaller than 3/4 page from appearing alone on a page:
 \renewcommand{\textfraction}{0.25}
@@ -38,7 +43,7 @@
 \newcommand{\dfn}[1]  {Definition~\ref{#1}}	% Definition~...
 \newcommand{\thrm}[1] {Theorem~\ref{#1}}	% Theorem~...
 \newcommand{\lem}[1]  {Lemma~\ref{#1}}		% Lemma~...
-\newcommand{\fig}[1]  {Fig.\,\ref{#1}}		% Fig.~...
+\newcommand{\fig}[1]  {Figure~\ref{#1}}		% Figure~...
 \newcommand{\tab}[1]  {Table~\ref{#1}}		% Table~...
 \newcommand{\chap}[1] {Chapter~\ref{#1}}	% Chapter~...
 \newcommand{\secn}[1] {Section~\ref{#1}}	% Section~...

@@ -1,41 +1,39 @@
 \begin{table}
 \caption{Outline of each of the ten variation generator methods used.}
-\resizebox{\columnwidth}{!}{%
 \label{tab:var-gens}
-\begin{tabular}{l|l|l}
+\begin{tabularx}{\columnwidth}{l|l|X}
 \textbf{Category} &
   \textbf{Method} &
   \textbf{Definition} \\ \hline
 \multirow{3}{*}{Misspelling} &
   NeighbCharSwap &
-  \begin{tabular}[c]{@{}l@{}}Swaps two neighbouring characters from a random\\query term (excluding stopwords).\end{tabular} \\ \cline{2-3} 
+  Swaps two neighbouring characters from a random query term (excluding stopwords). \\ \cline{2-3} 
  &
   RandomCharSub &
-  \begin{tabular}[c]{@{}l@{}}Replaces a random character from a random query\\term (excluding stopwords) with a randomly\\chosen new ASCII character.\end{tabular} \\ \cline{2-3} 
+  Replaces a random character from a random query term (excluding stopwords) with a randomly chosen new ASCII character. \\ \cline{2-3} 
  &
   QWERTYCharSub &
-  \begin{tabular}[c]{@{}l@{}}Replaces a random character of a random query\\term (excluding stopwords) with another character\\from the QWERTY keyboard, mimicking typing\\errors.\end{tabular} \\ \hline
+  Replaces a random character of a random query term (excluding stopwords) with another character from the QWERTY keyboard, mimicking typing errors. \\ \hline
 \multirow{2}{*}{Naturality} &
   RemoveStopWords &
-  \begin{tabular}[c]{@{}l@{}}Removes all stopwords from the query, transform-\\ing natural language queries into keyword queries. \end{tabular}\\ \cline{2-3} 
+  Removes all stopwords from the query, transforming natural language queries into keyword queries. \\ \cline{2-3} 
  &
   T5DescToTitle &
-  \begin{tabular}[c]{@{}l@{}}Applies an encoder-decoder transformer model (T5)\\fine-tuned to generate the title of a TREC topic\\title based on the topic description.\end{tabular} \\ \hline
+  Applies an encoder-decoder transformer model (T5) fine-tuned to generate the title of a TREC topic title based on the topic description. \\ \hline
 Ordering &
   RandomOrderSwap &
-  \begin{tabular}[c]{@{}l@{}}Randomly swaps two words of the query, shuffling\\word order.\end{tabular} \\ \hline
+  Randomly swaps two words of the query, shuffling word order. \\ \hline
 \multirow{4}{*}{Paraphrasing} &
   BackTranslation &
-  \begin{tabular}[c]{@{}l@{}}Applies a translation method to the query, trans-\\lating it to a pivot language and back to the orig-\\inal language, generating paraphrases.\end{tabular} \\ \cline{2-3} 
+  Applies a translation method to the query, translating it to a pivot language and back to the original language, generating paraphrases. \\ \cline{2-3} 
  &
   T5QQ &
-  \begin{tabular}[c]{@{}l@{}}Utilises an encoder-decoder transformer model (T5)\\fine-tuned to generate a paraphrase question from\\the original question \cite{desctitle}.\end{tabular} \\ \cline{2-3} 
+  Utilises an encoder-decoder transformer model (T5) fine-tuned to generate a paraphrase question from the original question \cite{desctitle}. \\ \cline{2-3} 
  &
   WordEmbedSynSwap &
-  \begin{tabular}[c]{@{}l@{}}Replaces a non-stop word by a synonym based on\\the nearest neighbour word in the embedding\\space, using counter-fitted Glove embeddings \cite{glovefit}.\end{tabular} \\ \cline{2-3} 
+  Replaces a non-stop word by a synonym based on the nearest neighbour word in the embedding space, using counter-fitted Glove embeddings \cite{glovefit}. \\ \cline{2-3} 
  &
   WordNetSynSwap &
-  \begin{tabular}[c]{@{}l@{}}Replaces a non-stop word by the first synonym\\found on WordNet (https://wordnet.princeton.edu/);\\if no valid synonyms are available, it does not output\\a valid variation.\end{tabular} \\ \hline
-\end{tabular}%
-}
+  Replaces a non-stop word by the first synonym found on WordNet (https://wordnet.princeton.edu/); if no valid synonyms are available, it does not output a valid variation. \\ \hline
+\end{tabularx}
 \end{table}

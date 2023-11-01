@@ -5,3 +5,27 @@ Query variations, as explored in this chapter, can originate from multiple sourc
 
 \input{3RelatedWork/LiteratureReview/largeLanguageModels}
 \input{3RelatedWork/LiteratureReview/queryVariation}
+
+\section{Relevant Gaps Identified}
+\subsubsection{Benchmark Datasets}
+\begin{itemize}
+    \item Gap: While existing literature recognises the importance of query variations in benchmark datasets, there is limited focus on the DL-TYPO dataset. This dataset is unique in its specific focus on queries containing typos, which is a common occurrence in real-world search queries.
+    \item Rationale: Real-world typos in queries are practical and commonly encountered, and the DL-TYPO dataset provides an opportunity to investigate how retrieval systems handle this particular type of query variation. The gap lies in understanding how typos impact retrieval performance and whether methods that work for other query variations are equally effective for typos.
+    \item Significance: Addressing this gap is essential because typos in user queries pose a distinct challenge. Exploring how retrieval systems perform when faced with typos can provide valuable insights for improving system robustness.
+\end{itemize}
+
+\subsubsection{Effect on Performance}
+\begin{itemize}
+    \item Gap: While the research has established that query variations, in general, negatively affect the effectiveness of LLMs in IR, it is crucial to investigate whether LLMs exhibit different performance characteristics when dealing with queries containing typos instead of other types of query variations.
+    \item Rationale: Typos are a common and practical source of query variations, and understanding how these variations impact LLMs' performance is vital. LLMs might respond differently to typos compared to other variations, and these differences need exploration.
+    \item Significance: Bridging this gap is important because it can provide insights into whether retrieval models need specialised handling when dealing with typos. It may lead to the development of targeted methods for addressing query typos.
+\end{itemize}
+
+\subsubsection{Methods of Generation}
+\begin{itemize}
+    \item Gap: Recent studies discuss various methods for generating query variations; however, there is limited coverage of methods tailored specifically to handle query variations related to typos in user queries.
+    \item Rationale: Generating query variations related to typos requires specific techniques, as typos can have distinct patterns and characteristics. Existing methods may not be optimised for this purpose, and thus, understanding and developing effective methods for typos is a research area with a gap.
+    \item Significance: Addressing this gap is valuable because it can lead to developing specialised methods for generating typos, which is critical for generating more realistic query variations in benchmarks like DL-TYPO.
+\end{itemize}
+
+In summary, expanding the study to the DL-TYPO dataset can provide an opportunity to address these gaps and contribute to a comprehensive understanding of how real-world typos in queries impact retrieval systems and the development of effective methods for handling typos in query variations.
