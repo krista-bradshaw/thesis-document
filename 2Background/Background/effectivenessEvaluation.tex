@@ -1,0 +1,27 @@
+\section{Effectiveness Evaluation}
+The effectiveness of Large Language Models (LLMs) is a critical aspect of their assessment, and it is typically evaluated through a combination of offline and online methods, as well as user studies. These evaluations help gauge how well LLMs perform on various Natural Language Processing (NLP) tasks, ultimately contributing to their refinement and development.
+
+\subsection{Offline Evaluation}
+Offline evaluation is a commonly used method for assessing LLM effectiveness. It involves conducting evaluations on benchmark datasets with well-defined NLP tasks. These tasks can range from language translation to sentiment analysis and text classification. One widely used benchmark is the BM25 benchmark, along with various other similar datasets tailored to specific NLP tasks. The results of these offline evaluations provide a means to compare different LLMs and identify areas that may require improvement \cite{penha2022}.
+
+\subsection{Online Evaluation}
+Online evaluation is another crucial technique used to assess the effectiveness of LLMs, particularly in real-world, live applications. Instead of using pre-existing datasets, online evaluation involves deploying LLM systems in actual settings and measuring their performance and impact on user outcomes. This approach allows for observing how users interact with the system during live usage, providing insights into real-world effectiveness and efficiency improvements. This contrasts offline evaluations, which are based on historical data sets.
+
+\subsection{User Studies}
+In addition to data-centric evaluations, the effectiveness of LLMs can also be evaluated through user studies. User studies typically involve soliciting user feedback and collecting data on user satisfaction and experience. This feedback can be gathered through surveys or usability testing, where users are asked to perform specific tasks or interact with the LLM system. These studies provide valuable insights into how LLMs perform regarding user engagement, usability, and overall satisfaction.
+
+\subsection{Metrics}
+To quantify the effectiveness of LLMs, various metrics are used, each shedding light on different aspects of system performance. The choice of metric depends on the specific evaluation context and the goals of the assessment. One primary evaluation metric often employed in information retrieval is nDCG (Normalised Discounted Cumulative Gain).
+
+nDCG (Normalised Discounted Cumulative Gain): nDCG is a widely recognised metric in information retrieval, particularly relevant when the order of search results is crucial. It assesses the quality of ranked lists by considering the relevance of documents and their positions within the list. It calculates cumulative gain attributed to relevant documents while appropriately discounting the importance of items lower down the ranking. Normalization ensures that nDCG values fall within the range of 0 to 1, making it suitable for comparisons across different retrieval tasks and datasets. nDCG is sensitive to subtle distinctions in ranking order, which can significantly impact user satisfaction.
+In addition to nDCG, there are several other standard metrics used in information retrieval evaluation, including:
+
+\begin{itemize}
+    \item Accuracy: Measures the percentage of correctly classified instances from all instances in the dataset.
+    \item Precision: Measures the proportion of true positives (correctly classified documents) versus all documents classified as positive.
+    \item Recall: Measures the proportion of true positives out of all positive documents.
+    \item fMeasure: A harmonic mean of recall and precision, commonly used in imbalanced datasets to emphasise recall over precision.
+    \item MAP (Mean Average Precision): Unlike the above measures, MAP accounts for all relevant document rankings by calculating the mean of precision scores across all queries. This provides a more comprehensive view of system performance \cite{sokolova}.
+\end{itemize}
+
+These metrics collectively contribute to a nuanced understanding of the retrieval process and the outcomes of LLMs in various NLP tasks and information retrieval scenarios.

@@ -1,0 +1,17 @@
+\begin{table}[ht]
+\centering
+\caption{Effectiveness (nDCG@10) of different methods for DL-TYPO when employing rank fusion (RRF) of the rankings obtained by using different sets of queries.}
+\label{tab:typo-fusion-table}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{l|l|l|l|l|l|l|l}
+\textbf{} & \textbf{BM25} & \textbf{RM3} & \textbf{KNRM} & \textbf{CKNRM} & \textbf{EPIC} & \textbf{BERT} & \textbf{T5} \\ \hline
+Original Query   & 0.1911 & 0.1757 & 0.1994 & 0.1798 & 0.1862 & 0.1951 & 0.2882 \\ \hline
+$RRF_{Misspelling}$ & 0.0979 & 0.0933 & 0.1147 & 0.0855 & 0.1006 & 0.0782 & 0.1373 \\
+$RRF_{Naturality}$  & 0.1657 & 0.154  & 0.1592 & 0.1498 & 0.161  & 0.1557 & 0.2277 \\
+$RRF_{Paraphrase}$  & 0.1965 & 0.1919 & 0.1839 & 0.1722 & 0.202  & 0.1931 & 0.2479 \\
+$RRF_{Synonym}$     & 0.0883 & 0.0795 & 0.1214 & 0.0945 & 0.1051 & 0.0932 & 0.1477 \\
+$RRF_{All}$         & 0.1546 & 0.1516 & 0.184  & 0.159  & 0.1656 & 0.156  & 0.2098 \\ \hline
+Best Query        & 0.3156 & 0.3024 & 0.275  & 0.317  & 0.3052 & 0.2913 & 0.421 
+\end{tabular}%
+}
+\end{table}

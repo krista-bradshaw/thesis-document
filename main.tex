@@ -1,0 +1,30 @@
+\documentclass[12pt,a4paper,oneside,openany]{book}
+
+\input{setup}
+\begin{document}
+\frontmatter
+    \input{0FrontMatter/title}
+    \input{0FrontMatter/coverLetter}
+    \input{0FrontMatter/acknowledgments}
+    \input{0FrontMatter/abstract}
+    \tableofcontents
+    \listoffigures
+    \addcontentsline{toc}{chapter}{List of Figures}
+    \listoftables
+    \addcontentsline{toc}{chapter}{List of Tables}
+\mainmatter
+    \pagestyle{plain}
+    \include{1Introduction/introduction}
+    \include{2Background/background}
+    \include{3RelatedWork/literatureReview}
+    \include{4Methodology/methodology}
+    \include{5Results/results}
+    \include{6Conclusion/conclusion}
+    \bibliographystyle{ieeetr}
+    \bibliography{7References/bibliography}
+    \addcontentsline{toc}{chapter}{References}
+    %\addcontentsline{toc}{chapter}{Appendices}
+    %\appendix
+    %\include{8Appendix/appendix}
+
+\end{document}

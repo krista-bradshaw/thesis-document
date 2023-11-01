@@ -1,0 +1,16 @@
+\begin{table}[h]
+\centering
+\caption{Query Variation Taxonomy with examples from UQV100 Dataset.}
+\label{tab:var-types}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{l|l|l|lcl}
+\begin{tabular}[c]{@{}l@{}}\textbf{Changes}\\ \textbf{semantics}\end{tabular} & \textbf{Category} & \textbf{Definition} & \multicolumn{3}{l}{\textbf{Examples from UQV100}} \\ \hline
+\multirow{2}{*}{Yes} & Gen./specialization & \begin{tabular}[c]{@{}l@{}}Generalizes or special-\\izes within the same\\information need.\end{tabular} & \multicolumn{1}{l}{\begin{tabular}[c]{@{}l@{}}american civil\\war\end{tabular}} & \multicolumn{1}{c}{$ \leftrightarrow $} & \begin{tabular}[c]{@{}l@{}}number of battles\\in south carolina\\during civil war\end{tabular} \\ \cline{2-6} 
+ & Aspect Change & \begin{tabular}[c]{@{}l@{}}Moves between related\\but different aspects\\within the same infor-\\mation need.\end{tabular} & \multicolumn{1}{l}{\begin{tabular}[c]{@{}l@{}}what types of spi-\\ders can bite you\\while gardening\end{tabular}} & \multicolumn{1}{c}{$ \leftrightarrow $} & {\begin{tabular}[c]{@{}l@{}}signs of spider\\bite\end{tabular}} \\ \hline
+\multirow{4}{*}{No} & Misspelling & \begin{tabular}[c]{@{}l@{}}Adds or removes spell-\\ing errors.\end{tabular} & \multicolumn{1}{l}{raspberry pi} & \multicolumn{1}{c}{$ \leftrightarrow $} & raspeberry pi \\ \cline{2-6} 
+ & Naturality & \begin{tabular}[c]{@{}l@{}}Moves between keyword\\and natural language\\queries.\end{tabular} & \multicolumn{1}{l}{\begin{tabular}[c]{@{}l@{}}how does zinc\\relate to wilson’s\\disease\end{tabular}} & \multicolumn{1}{c}{$ \leftrightarrow $} &{\begin{tabular}[c]{@{}l@{}} zinc wilson’s\\disease\end{tabular}} \\ \cline{2-6} 
+ & Ordering & \begin{tabular}[c]{@{}l@{}}Changes the order of\\words.\end{tabular} & \multicolumn{1}{l}{\begin{tabular}[c]{@{}l@{}}carotid cavernous\\ fistula treatment\end{tabular}} & \multicolumn{1}{c}{$ \leftrightarrow $} & \begin{tabular}[c]{@{}l@{}}treatment carotid\\ cavernous fistula\end{tabular} \\ \cline{2-6} 
+ & Paraphrasing & \begin{tabular}[c]{@{}l@{}}Rephrases the query by\\modifying one or more\\words.\end{tabular} & \multicolumn{1}{l}{\begin{tabular}[c]{@{}l@{}}cures for a bald\\spot\end{tabular}} & \multicolumn{1}{c}{$ \leftrightarrow $} & cures for baldness \\ \hline
+\end{tabular}%
+}
+\end{table}

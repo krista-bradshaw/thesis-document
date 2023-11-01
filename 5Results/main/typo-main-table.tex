@@ -1,0 +1,21 @@
+\begin{table}[ht]
+\centering
+\caption{Effectiveness (nDCG@10) of each method and model for DL-TYPO when faced with different query variations. Bold indicates the highest value observed for each model. Subscripts, ↓/↑, signify statistically significant decreases/increases obtained through a two-sided paired Student's T-Test conducted at a 95\% confidence level when comparing the model's performance with the original queries.}
+\label{tab:typo-main-table}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{l|l|l|l|l|l|l|l|l}
+\textbf{Category} & \textbf{Variation Method} & \textbf{BM25} & \textbf{RM3} & \textbf{KNRM} & \textbf{CKNRM} & \textbf{EPIC} & \textbf{BERT} & \textbf{T5} \\ \hline
+- & Original Query    & 0.1911 & 0.1757 & \textbf{0.2117} & \textbf{0.1798} & 0.1862 & 0.1951↓ & 0.2882 \\ \hline
+Misspelling     & NeighbCharSwap   & 0.1145 & 0.1086 & 0.1224↓ & 0.0961↓ & 0.0987↓ & 0.0865↓ & 0.1922  \\
+Misspelling     & QWERTYCharSub    & 0.0772↓ & 0.0746↓ & 0.0813↓ & 0.0572↓ & 0.0707↓ & 0.0683↓ & 0.1139↓  \\
+Misspelling     & RandomCharSub    & 0.068↓  & 0.0626↓ & 0.1083↓ & 0.079↓  & 0.0844↓ & 0.0733↓ & 0.148↓  \\ \hline
+Naturality      & RemoveStopWords  & 0.1911 & 0.1757 & 0.2022 & 0.1666 & 0.1825 & 0.1762 & 0.2794  \\
+Naturality      & T5DescToTitle    & 0.1347 & 0.1244 & 0.1351↓ & 0.1228 & 0.1434 & 0.1454 & 0.2055  \\ \hline
+Ordering        & RandomOrderSwap  & 0.1911 & 0.1757 & \textbf{0.2117} & 0.1443 & 0.1875↓ & 0.1719 & 0.2707  \\ \hline
+Paraphrase      & BackTranslation  & 0.1468 & 0.141  & 0.1578 & 0.121  & 0.1702 & 0.1625 & 0.2245  \\
+Paraphrase      & T5QQP            & \textbf{0.2138} & \textbf{0.2052} & 0.1738 & 0.1546 & \textbf{0.1956} & \textbf{0.218} & \textbf{0.2897}  \\
+Paraphrase      & WordEmbedSynSwap & 0.0809 & 0.075  & 0.106↓  & 0.0901↓ & 0.0976↓ & 0.0638↓ & 0.1326↓  \\
+Paraphrase      & WordNetSynSwap   & 0.1097↓ & 0.0978↓ & 0.1255↓ & 0.1004↓ & 0.1033↓ & 0.1018↓ & 0.1726↓ \\ \hline
+\end{tabular}%
+}
+\end{table}
