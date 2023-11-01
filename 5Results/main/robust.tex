@@ -25,15 +25,6 @@ As anticipated, the results closely paralleled the original research, albeit wit
 The variation in results between the DL-TYPO dataset and the previously studied datasets can be attributed to several underlying factors. Firstly, the DL-TYPO dataset inherently features more query variations (misspellings, specifically) than the synthetically generated counterparts. The diversity and unpredictability of these authentic query variations could pose a more substantial challenge to the robustness of retrieval pipelines, leading to a potentially higher decline in effectiveness. Furthermore, the specific characteristics of the queries in the DL-TYPO dataset, such as the frequency and types of typos, differ significantly from those in the other datasets. These idiosyncrasies interact with the retrieval models and the query variations in a distinct manner, further contributing to variations in observed effectiveness.
 Additionally mentioned in the original study, dataset-specific properties, such as query lengths, language styles, and topical diversity, play a role in the differing outcomes. Lastly, the performance of retrieval models can also be influenced by the dataset's composition in terms of judged and unjudged documents. If the query variations in the DL-TYPO dataset significantly increase unjudged documents' ranking highly, this could impact the perceived effectiveness, even if some of these documents might be contextually relevant.
 
-\begin{comment}
-    \subsection{Further Experiments}
-    \note{introduce and outline two experiments}
-    \note{experiment 1 figure (figure 1) and expl and results and comp}
-    
-    The study also explored the possibility that unjudged documents were affecting effectiveness calculations. However, the average number of judged documents in the top-10 ranked lists increased for both datasets. This suggests that the performance decline could not be attributed to unjudged documents rising in the rankings due to query variations.
-    \note{experiment 2 figure/stats and expl and results and comp}
-\end{comment}
-
 \subsection{Robustness by Query Variation Category}
 The approach employed in the original study was replicated to examine the impact of different query variation categories on model effectiveness. Four distinct categories, namely misspellings, paraphrasing, naturality, and ordering, were systematically assigned to various query variations. The distribution of nDCG@10 $\Delta$ values across all models and variation categories is illustrated in the accompanying \fig{fig:dist-plots}, and these results are substantiated by the mean nDCG@10 $\Delta$ values per category and dataset, as depicted in \fig{fig:cat-changes}.
 
@@ -45,13 +36,3 @@ The findings highlight that, on average, the most pronounced negative impact was
 A closer look at the specific methods within each category, \tab{tab:m-egs} provides an overview of how these methods affect nDCG@10 $\Delta$ when applied to an example query from DL-TYPO. Notably, the T5DescToTitle method results in a significant 75\% reduction in nDCG@10. Other methods, such as NeighbCharSwap, RandomCharSub, and QWERTYCharSub, lead to approximately 49 decreases in nDCG@10, underscoring their detrimental impact on query variations. This analysis emphasises the importance of carefully selecting variation methods, as their effects can vary significantly and have a substantial impact on the quality of retrieval results.
 
 \input{5Results/main/m-egs-table}
-
-\begin{comment}
-    \subsection{Robustness by Model Category}
-    The study examined how different model categories responded to query variations. Models were categorised as Trad (lexical matching), NN (neural network-based), and TNN (transformer language model-based). The findings revealed that, despite varying magnitudes and directions of nDCG@10 $\Delta$ values, models within the same category exhibited similar behaviour in response to query variations. tSNE dimensionality reduction and correlation analysis indicated that each model type was affected in a manner consistent with its category. Furthermore, the analysis showed that TNN models slightly preferred natural language queries over keyword queries. The effect of word order on TNN models was minimal, in line with recent research suggesting that word order may be less critical for transformer models.
-    
-    \note{figure (figure 3)}
-    \note{table (table 6)}
-    \note{explain trends}
-    \note{compare to og}
-\end{comment}
