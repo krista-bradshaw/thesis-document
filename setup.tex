@@ -1,151 +1,53 @@
-\usepackage{graphics}	% if you want encapsulated PS figures.
-\usepackage{amsmath}
-\usepackage[textwidth=8cm]{geometry}
-\usepackage{graphicx}            %Enhanced support for graphics.
-\usepackage{float}               %Improved interface for floating objects. 
+\usepackage[textwidth=80mm,
+            a4paper,
+            left=27mm, %47mm if binding
+            right=27mm,
+            top=30mm,
+            bottom=30mm]{geometry}
+\usepackage{graphicx}
 \usepackage[export]{adjustbox}
-\usepackage{todonotes}
 \usepackage{url}
 \usepackage{tabularx}
-\usepackage{etoolbox}
+\usepackage [english]{babel} % fix backwards quotes issue
+\usepackage [autostyle, english = american]{csquotes} \MakeOuterQuote{"}
+\usepackage{multirow}
 
+% Format blank pages
+\makeatletter
+\def\cleardoublepage{\clearpage\if@twoside \ifodd\c@page\else
+\mbox{}
+\vspace*{\fill}
+\begin{center}
+This page intentionally left blank.
+\end{center}
+\vspace{\fill}
+\thispagestyle{empty}
+\newpage
+\if@twocolumn\mbox{}\newpage\fi
+\fi\fi}
+\makeatother
+
+% Make table font 10pt
 \AtBeginEnvironment{tabularx}{\fontsize{10pt}{10pt}\selectfont}
 \AtBeginEnvironment{tabular}{\fontsize{10pt}{10pt}\selectfont}
 
-% Number subsections but not subsubsections:
+% Number subsections but not subsubsections
 \setcounter{secnumdepth}{2}
-% Show subsections but not subsubsections in table of contents:
+% Show subsections but not subsubsections in table of contents
 \setcounter{tocdepth}{2}
-
-\setlength{\topmargin}		{-5mm}  %  25-5 = 20mm
-\setlength{\oddsidemargin}	{5mm}  % rhs page inner margin = 25+10mm
-\setlength{\evensidemargin}	{-5mm}   % lhs page outer margin = 25mm
-\setlength{\textwidth}		{150mm} % 35 + 150 + 25 = 210mm
-\setlength{\textheight}		{240mm} % 
 
 \renewcommand{\baselinestretch}{1.5}
 
-% Stop figure/tables smaller than 3/4 page from appearing alone on a page:
+% Stop figure/tables smaller than 3/4 page from appearing alone on a page
 \renewcommand{\textfraction}{0.25}
 \renewcommand{\topfraction}{0.75}
 \renewcommand{\bottomfraction}{0.75}
 \renewcommand{\floatpagefraction}{0.75}
 
-% THEOREM-LIKE ENVIRONMENTS:
-\newtheorem{defn}	{Definition}	% cf. \dfn for cross-referencing
-\newtheorem{theorem}	{Theorem}	% cf. \thrm for cross-referencing
-\newtheorem{lemma}	{Lemma}		% cf. \lem for cross-referencing
-
-% AIDS TO CROSS-REFERENCING (All take a label as argument):
-\newcommand{\eref}[1] {(\ref{#1})}		% (...)
-\newcommand{\eq}[1]   {Eq.\,(\ref{#1})}		% Eq.~(...)
-\newcommand{\eqs}[2]  {Eqs.~(\ref{#1}) and~(\ref{#2})}
-\newcommand{\dfn}[1]  {Definition~\ref{#1}}	% Definition~...
-\newcommand{\thrm}[1] {Theorem~\ref{#1}}	% Theorem~...
-\newcommand{\lem}[1]  {Lemma~\ref{#1}}		% Lemma~...
+% Cross-referencing (All take a label as argument)
+\newcommand{\eq}[1]   {Eq.\,\ref{#1}}		% Eq.~...
 \newcommand{\fig}[1]  {Figure~\ref{#1}}		% Figure~...
 \newcommand{\tab}[1]  {Table~\ref{#1}}		% Table~...
 \newcommand{\chap}[1] {Chapter~\ref{#1}}	% Chapter~...
 \newcommand{\secn}[1] {Section~\ref{#1}}	% Section~...
 \newcommand{\ssec}[1] {Subsection~\ref{#1}}	% Subsection~...
-
-% AIDS TO FORMATTING:
-\newcommand{\teq}[1]	{\mbox{$#1$}}	% in-Text EQuation (unbreakable)
-\newcommand{\qed}	{\hspace*{\fill}$\bullet$}	% end of proof
-
-% MATHEMATICAL TEMPLATES:
-% Text or math mode:
-\newcommand{\half}	{\ensuremath{\frac{1}{2}}}	% one-half
-\newcommand{\halftxt}	{\mbox{$\frac{1}{2}$}}	  	% one-half, small
-% Math mode only:
-% N.B. Parentheses are ROUND; brackets are SQUARE!
-\newcommand{\oneon}[1]	{\frac{1}{#1}}		  % reciprocal
-\newcommand{\pow}[2]	{\left({#1}\right)^{#2}}  % Parenthesized pOWer
-\newcommand{\bow}[2]	{\left[{#1}\right]^{#2}}  % Bracketed pOWer
-\newcommand{\evalat}[2]	{\left.{#1}\right|_{#2}}  % EVALuated AT with bar
-\newcommand{\bevalat}[2]{\left[{#1}\right]_{#2}}  % Bracketed EVALuated AT
-% Total derivatives:
-\newcommand{\sdd}[2]	{\frac{d{#1}}{d{#2}}}		    % Short
-\newcommand{\sqdd}[2]	{\frac{d^2{#1}}{d{#2}^2}}	    % 2nd ("SQuared")
-\newcommand{\ldd}[2]	{\frac{d}{d{#1}}\left({#2}\right)}  % Long paren'ed
-\newcommand{\bdd}[2]	{\frac{d}{d{#2}}\left[{#2}\right]}  % long Bracketed
-% Partial derivatives (same sequence as for total derivatives):
-\newcommand{\sdada}[2]	{\frac{\partial {#1}}{\partial {#2}}}
-\newcommand{\sqdada}[2]	{\frac{\partial ^{2}{#1}}{\partial {#2}^{2}}}
-\newcommand{\ldada}[2]	{\frac{\partial}{\partial {#1}}\left({#2}\right)}
-\newcommand{\bdada}[2]	{\frac{\partial}{\partial {#1}}\left[{#2}\right]}
-\newcommand{\da}	{\partial}
-
-% ORDINAL NUMBERS:
-\newcommand{\ith}	{\ensuremath{i^{\rm th}}}
-\newcommand{\jth}	{\ensuremath{j^{\rm th}}}
-\newcommand{\kth}	{\ensuremath{k^{\rm th}}}
-\newcommand{\lth}	{\ensuremath{l^{\rm th}}}
-\newcommand{\mth}	{\ensuremath{m^{\rm th}}}
-\newcommand{\nth}	{\ensuremath{n^{\rm th}}}
-
-% SINUSOIDAL TIME AND SPACE-DEPENDENCY FACTORS:
-\newcommand{\ejot}	{\ensuremath{e^{j\omega t}}}
-\newcommand{\emjot}	{\ensuremath{e^{-j\omega t}}}
-
-% UNITS (TEXT OR MATH MODE, WITH LEADING PADDING SPACE IF APPLICABLE):
-% NB: These have not been tested since being modified for LaTeX2e.
-\newcommand{\pack}	{\hspace{-0.08em}}
-\newcommand{\Pack}	{\hspace{-0.12em}}
-\newcommand{\mA}	{\ensuremath{\rm\,m\pack A}}
-\newcommand{\dB}	{\ensuremath{\rm\,d\pack B}}
-\newcommand{\dBm}	{\ensuremath{\rm\,d\pack B\pack m}}
-\newcommand{\dBW}	{\ensuremath{\rm\,d\pack B\Pack W}}
-\newcommand{\uF}	{\ensuremath{\rm\,\mu\pack F}}
-\newcommand{\pF}	{\ensuremath{\rm\,p\pack F}}
-\newcommand{\nF}	{\ensuremath{\rm\,n\pack F}}
-\newcommand{\uH}	{\ensuremath{\rm\,\mu\pack H}}
-\newcommand{\mH}	{\ensuremath{\rm\,m\pack H}}
-\newcommand{\Hz}	{\ensuremath{\rm\,H\pack z}}
-\newcommand{\kHz}	{\ensuremath{\rm\,k\pack H\pack z}}
-\newcommand{\MHz}	{\ensuremath{\rm\,M\pack H\pack z}}
-\newcommand{\GHz}	{\ensuremath{\rm\,G\pack H\pack z}}
-\newcommand{\J}		{\ensuremath{\rm\,J}}
-\newcommand{\kg}	{\ensuremath{\rm\,k\pack g}}
-\newcommand{\K}		{\ensuremath{\rm\,K}}
-\newcommand{\m}		{\ensuremath{\rm\,m}}
-\newcommand{\cm}	{\ensuremath{\rm\,cm}}
-\newcommand{\km}	{\ensuremath{\rm\,k\pack m}}
-\newcommand{\mm}	{\ensuremath{\rm\,m\pack m}}
-\newcommand{\nm}	{\ensuremath{\rm\,n\pack m}}
-\newcommand{\um}	{\ensuremath{\rm\,\mu m}}
-\newcommand{\Np}	{\ensuremath{\rm\,N\pack p}}
-\newcommand{\s}		{\ensuremath{\rm\,s}}
-\newcommand{\ms}	{\ensuremath{\rm\,m\pack s}}
-\newcommand{\us}	{\ensuremath{\rm\,\mu s}}
-\newcommand{\V}		{\ensuremath{\rm\,V}}
-\newcommand{\mV}	{\ensuremath{\rm\,m\Pack V}}
-\newcommand{\W}		{\ensuremath{\rm\,W}}
-\newcommand{\mW}	{\ensuremath{\rm\,m\Pack W}}
-\newcommand{\ohm}	{\ensuremath{\rm\,\Omega}}
-\newcommand{\kohm}	{\ensuremath{\rm\,k\Omega}}
-\newcommand{\Mohm}	{\ensuremath{\rm\,M\Omega}}
-\newcommand{\degs}	{\ensuremath{\rm^{\circ}}}
-
-% notes
-\usepackage{framed}
-\usepackage{xcolor}
-\newenvironment{formal}{
-    \def\FrameCommand{{\color{red}\vrule width 2pt}\hspace{2pt}}
-    \MakeFramed{\advance\hsize-\width}
-    \vspace{2pt}\noindent\hspace{-7pt}\vspace{3pt}
-    }{\vspace{3pt}\endMakeFramed}
-\newcommand{\note}[1]{
-\begin{formal}
-\color{red}\bf{{#1}}.\color{black}
-\end{formal}}
-
-% fix backwards quotes issue
-\usepackage [english]{babel}
-\usepackage [autostyle, english = american]{csquotes}
-\MakeOuterQuote{"}
-
-\usepackage{multirow}
-\usepackage{tabularray}
-\usepackage{array}
-\usepackage{verbatim}

@@ -1,18 +1,20 @@
 \chapter{Introduction}
-In the dynamic digital age, rapid and easy access to an immense repository of information has revolutionised the way knowledge is sought and consumed. Retrieval pipelines are the technological backbone behind search engines and recommendation systems, providing guidance through this vast information landscape. These pipelines are indispensable in people's daily lives, making them a key component of a digital existence.
+In the dynamic digital age, rapid and easy access to an immense repository of information has revolutionised the way knowledge is sought and consumed. Retrieval pipelines are the technological backbone behind search engines and recommendation systems, providing guidance through this vast information landscape. These pipelines are indispensable in people's daily lives, making them a vital component of a digital existence.
 
 The performance of retrieval pipelines is inextricably linked to the myriad of ways users formulate queries. Queries can exhibit various variations encompassing nuances in wording, syntax, and structure. Despite these distinctions, the ultimate goal remains constant – to satisfy the user's underlying information requirement.
 
 Recognising how these variations exert their influence on the performance of retrieval pipelines is of paramount importance in the ongoing investigation of ensuring these systems remain in harmony with the ever-evolving needs of their users. These variations can introduce substantial challenges to the search and recommendation process. Understanding and addressing them is pivotal to maintaining the reliability and effectiveness of these systems in serving the ever-diversifying needs of a global population that relies on them as indispensable tools in navigating the information-rich digital landscape. It is this constant adaptation and evolution of retrieval pipelines that guarantees they continue to be the reliable guides we depend on in our digital quests for knowledge and information.
 
 \section{Objectives and Scope}
-This thesis embarks on a comprehensive exploration of the robustness and generalisability of findings from an original study conducted in information retrieval. The study in question, authored by Gustavo Penha, Arthur Câmara, and Claudia Hauf, is titled "Evaluating the Robustness of Retrieval Pipelines with Query Variation Generators." Hereafter referred to as the "original study," this research has contributed invaluable insights into the performance of retrieval pipelines when subjected to variations in search queries. In particular, it has shed light on the limitations of these systems and proposed potential strategies for their improvement.
+This thesis embarks on a comprehensive exploration of the robustness and generalisability of findings from an original study conducted in information retrieval. The study in question, authored by Gustavo Penha, Arthur Câmara, and Claudia Hauf \cite{penha2022}, is titled "Evaluating the Robustness of Retrieval Pipelines with Query Variation Generators." Hereafter referred to as the "original study," this research has contributed invaluable insights into the performance of retrieval pipelines when subjected to variations in search queries. In particular, it has shed light on the limitations of these systems and proposed potential strategies for their improvement.
 
 This study is motivated by the pursuit of a deeper understanding of the behaviour of retrieval systems and the broader implications of the original study's findings, mainly when applied to different datasets and conditions. To accomplish this, two fundamental research questions guide the overarching themes of this investigation:
 
-\textbf{Research Question 1 (RQ1): To what extent can the findings and observations from the original study be successfully replicated using the same datasets, models, and methodologies?}
+\subsubsection{Research Question 1 (RQ1):}
+To what extent can the findings and observations from the original study be successfully replicated using the same datasets, models, and methodologies?
 
-\textbf{Research Question 2 (RQ2): How do the conclusions drawn from the original study generalise when applied to additional datasets, and what insights can be gained from this broader perspective?} 
+\subsubsection{Research Question 2 (RQ2):}
+How do the conclusions drawn from the original study generalise when applied to additional datasets, and what insights can be gained from this broader perspective?
 
 \subsection{Research Question 1: Reproduction}
 Research Question 1 dives deeply into the critical aspect of assessing the reproducibility of findings and observations from the original study, aiming to provide a comprehensive understanding of the robustness and reliability of the original research. This is a pivotal step in scientific inquiry as it not only validates the credibility of the initial findings but also paves the way for further development and refinement of knowledge in the field.
@@ -30,10 +32,28 @@ The second research question studies the generalisability of the original study'
 
 The objective of Research Question 2 is to systematically explore how the insights and conclusions of the original study stand up when exposed to a wide array of datasets beyond those initially considered. This involves the rigorous application of the same methodologies, models, and analytical tools used in the original study to the additional dataset. By subjecting these datasets to the same analytical lens, this research strives to uncover nuances and insights that may emerge in different dataset contexts. This process not only enhances the comprehension of the generalisability of the original study's findings but also contributes to a more robust understanding of retrieval pipeline behaviour across many scenarios.
 
-By investigating the generalisability of the original study's conclusions in diverse dataset contexts, a more comprehensive and nuanced perspective on the studied phenomena is gained. This approach allows for the identification of overarching trends and patterns that may transcend the specific dataset used in the original research, thus expanding our knowledge and refining the conclusions drawn from the study. 
+By investigating the generalisability of the original study's conclusions in diverse dataset contexts, a more comprehensive and nuanced perspective on the studied phenomena is gained. This approach allows for identifying overarching trends and patterns that may transcend the specific dataset used in the original research, thus expanding our knowledge and refining the conclusions drawn from the study. 
+
+\subsection{Scope}
+This research project is focused on investigating the impact of query variations on the effectiveness of retrieval pipelines in the context of large language models, specifically examining the DL-TYPO dataset. The following aspects fall within the project scope:
+
+\subsubsection{In Scope:}
+\begin{itemize}
+    \item Query Variation Categories: The project will explore and evaluate the impact of query variations within categories such as misspellings, paraphrasing, naturality, and ordering. These categories align with the variations previously studied in the original research.
+    \item Existing Models and Methods: The research will employ existing models and query variation methods utilised in the original study. This includes RandomOrderSwap, NeighbCharSwap, QWERTYCharSub, RandomCharSub, RemoveStopWords, T5DescToTitle, WordEmbedSynSwap, T5QQP, BackTranslation, and WordNetSynSwap.
+    \item Evaluation Metrics: The evaluation will use standard information retrieval metrics such as nDCG@10 to assess the effectiveness of retrieval pipelines when confronted with query variations.
+    \item Datasets: The project will extend to focus on the DL-TYPO dataset, which contains queries with typos. Additionally, it will encompass the ANTIQUE and TREC-DL-2019 datasets used in the original study, providing a basis for comparison and validation.
+\end{itemize}
+
+\subsubsection{Out of Scope:}
+\begin{itemize}
+    \item New Models or Generator Techniques: The project will not involve the development or implementation of new models or generator techniques for query variations. It will rely on the existing methods established in the original research.
+    \item Online Evaluation: Online evaluation methods, which require real-time user interactions and feedback, are not within the scope of this project. The research will primarily focus on offline evaluation metrics.
+    \item Query Variation Categories: The project will not investigate variation types that alter semantics (e.g., changing the meaning of the query). It primarily concerns variations that do not significantly change the underlying user intent.
+\end{itemize}
 
 \section{Project Timeline}
-This section examines how the actual timeline of the thesis project aligned with the projected timeline outlined in the initial proposal, graphically represented in \fig{fig:gantt}. It is essential to highlight that while the project plan serves as a structured guide, unforeseen challenges and adjustments often can and do occur during the execution of any research endeavour. In this case, deviations from the initially projected timeline impacted the project's progress.
+This section examines how the actual timeline of the thesis project aligned with the projected timeline outlined in the initial proposal, graphically represented in \fig{fig:gantt}. It is essential to highlight that while the project plan serves as a structured guide, unforeseen challenges and adjustments often occur during the execution of any research endeavour. In this case, deviations from the initially projected timeline impacted the project's progress.
 
 \begin{figure}[h]
     \centering

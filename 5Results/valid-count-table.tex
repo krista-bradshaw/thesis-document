@@ -1,19 +1,19 @@
 \begin{table}[ht]
 \centering
-\caption{Total number of valid query variations and percentage of valid variations compared to the total queries for dataset and generation method, categorised by the category.}
+\caption{Total number of valid query variations and percentage of valid variations compared to the total queries for dataset and generation method, categorised by the category. The highest and lowest observed percentages are bolded and italicised, respectively.}
 \label{tab:valid-vars}
 \begin{tabularx}{\columnwidth}{X|r|r|r}
 \textbf{Method}  & \textbf{DL-TYPO}    & \textbf{ANTIQUE}   & \textbf{TREC-DL-2019} \\ \hline
-NeighbCharSwap   & 60 (100\%)          & 199 (100\%)        & 43 (100\%)            \\
+NeighbCharSwap   & \textbf{60 (100\%)}          & 199 (99\%)        & \textbf{43 (100\%)}            \\
 RandomCharSub    & 59 (98\%)           & 197 (98\%)         & 42 (98\%)             \\
-QWERTYCharSub    & 60 (100\%)          & 182 (91\%)         & 42 (98\%)             \\ \hline
-RemoveStopWords  & 40 (67\%)           & 199 (100\%)        & 37 (86\%)             \\
+QWERTYCharSub    & \textbf{60 (100\%)}          & 182 (91\%)         & 42 (98\%)             \\ \hline
+RemoveStopWords  & 40 (67\%)           & 199 (99\%)        & 37 (86\%)             \\
 T5DescToTitle    & 42 (70\%)           & 136 (68\%)         & 35 (81\%)             \\ \hline
-RandomOrderSwap  & 60 (100\%)          & 200 (100\%)        & 43 (100\%)            \\ \hline
+RandomOrderSwap  & \textbf{60 (100\%)}          & \textbf{200 (100\%)}        & \textbf{43 (100\%)}            \\ \hline
 BackTranslation  & 34 (57\%)           & 93 (46\%)          & 23 (53\%)             \\
 T5QQP            & 52 (87\%)           & 105 (52\%)         & 26 (60\%)             \\
 WordEmbedSynSwap & 41 (68\%)           & 124 (62\%)         & 27 (63\%)             \\
-WordNetSynSwap   & 29 (48\%)           & 71 (36\%)          & 16 (37\%)             \\ \hline
+WordNetSynSwap   & \textit{29 (48\%)}           & \textit{71 (36\%)}          & \textit{16 (37\%)}             \\ \hline
 \textbf{Total}   & \textbf{477 (80\%)} & \textbf{1506 (75\%)} & \textbf{334 (78\%)}     \\ \hline
 \end{tabularx}%
 \end{table}

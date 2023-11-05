@@ -6,10 +6,20 @@ A thorough evaluation of the generated query variations' quality was carried out
 This approach was meticulously followed in this study when analysing the variations generated for the DL-TYPO dataset. This dataset comprises 60 queries, with each query undergoing query variation generation. The methods employed for query variation generation were consistent with those of the original study, albeit with minor adjustments due to the absence of sourcing from IR\_datasets. The process can be briefly summarised as follows:
 
 \begin{enumerate}
-\item \textbf{Query Variations Generation:} Following the methodology utilised in the original study, a query variation, denoted as qˆ, was generated for each query, q, using each method, M.
+\item \textbf{Query Variations Generation:} Following the methodology utilised in the original study, a query variation, denoted as $q\sp{\prime}$, was generated for each query, q, using each method, M (\eq{eq1}).
+
+\begin{equation}\label{eq1}
+    q\sp{\prime} = M(q)
+\end{equation}
+
 \item \textbf{Variation Editing:} Punctuation and capital letters were consistently eliminated from the query variations, adhering to the procedures delineated in the original study.
-\item \textbf{Automatic Annotation:} All variations resulting from misspelling and ordering were automatically categorised as valid, as these transformations are considered rule-based and maintain the same query semantics. Additionally, any transformations leading to a query identical to the input query (qˆ = M(q) = q) were automatically classified as invalid.
-\item \textbf{Manual Annotation:} For the remaining 320 query-variation pairs, manual annotation was conducted, following criteria analogous to those employed in the original study. These criteria encompassed two primary considerations: (I) Whether qˆ retained the same semantics as q and (II) Whether the syntax difference between q and qˆ could be attributed to category C.
+\item \textbf{Automatic Annotation:} All variations resulting from misspelling and ordering were automatically categorised as valid, as these transformations are considered rule-based and maintain the same query semantics. Additionally, any transformations leading to a query identical to the input query (\eq{eq2}) were automatically classified as invalid.
+
+\begin{equation}\label{eq2}
+    q\sp{\prime} = M(q) = q
+\end{equation}
+
+\item \textbf{Manual Annotation:} For the remaining 320 query-variation pairs, manual annotation was conducted, following criteria analogous to those employed in the original study. These criteria encompassed two primary considerations: (I) Whether qˆ retained the same semantics as q and (II) Whether the syntax difference between q and qˆ could be attributed to category C \cite{penha2022}.
 \end{enumerate}
 
 Furthermore, the observations arising from DL-TYPO variation annotations indicated several parallels with the original study, as well as novel insights:
